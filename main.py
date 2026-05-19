@@ -27,7 +27,7 @@ def main():
     
     # delimiter=',' dice a Python che i dati sono separati da virgola
     # skiprows=1 fa saltare la prima riga (se hai scritto i nomi delle colonne)
-    dati = np.loadtxt('BPM_geometry.csv', delimiter=',', skiprows=1)
+    dati = np.loadtxt('nome_file.csv', delimiter=',', skiprows=1)
     # Estrai le colonne (l'indice parte da 0)
     r = dati[:, 0]             # Vettore delle posizioni radiali delle sezioni della pala (m)
     c = dati[:, 1]                    # Lunghezza della corda per ciascuna sezione radiale (m)
