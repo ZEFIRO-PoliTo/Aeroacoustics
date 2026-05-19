@@ -1,5 +1,5 @@
 import numpy as np
-from utils import trapz, quintic_blend, abs_smooth, aspect_ratio_correction, ksmin
+from .utils import trapz, quintic_blend, abs_smooth, aspect_ratio_correction, ksmin
 
 """
 Frequenze standard in bande di terzo d'ottava (Hz). 
