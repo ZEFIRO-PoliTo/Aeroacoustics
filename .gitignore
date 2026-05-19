@@ -1,0 +1,37 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Compilati / build
+build/
+dist/
+*.o
+*.out
+*.exe
+
+# File temporanei
+*.tmp
+*.temp
+
+# Archivi
+*.zip
+*.tar
+*.gz
+
+# Environment
+.env
+.venv/
+venv/
+
+# Cache
+__pycache__/
+*.pyc
