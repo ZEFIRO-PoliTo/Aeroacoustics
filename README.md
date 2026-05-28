@@ -1,8 +1,9 @@
 # Aeroacoustics
 
 Dipartimento di Aerodinamica & Aeroacustica del team ZEFIRO.
-Domenico Inchingolo 
-Luca De Bonis
+
+Domenico Inchingolo  
+Luca De Bonis  
 
 # BPM Python
 
