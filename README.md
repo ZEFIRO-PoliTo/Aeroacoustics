@@ -1,5 +1,9 @@
 # Aeroacoustics
 
+Dipartimento di Aerodinamica & Aeroacustica del team ZEFIRO.
+Domenico Inchingolo 
+Luca De Bonis
+
 # BPM Python
 
 Traduzione Python del modello semi-empirico Broadband BPM per la predizione del rumore aerodinamico a larga banda generato da eliche, rotori e turbine.
@@ -139,4 +143,7 @@ Dove:
 - Vargas, L., *Wind Turbine Noise Prediction*, Master's Thesis, Technical University of Lisbon, 2008.
 - BYU FLOW Lab, [`BroadbandBPM.jl`](https://github.com/byuflowlab/BroadbandBPM.jl).
 - BYU FLOW Lab code list, [`BroadbandBPM.jl`](https://flow.byu.edu/codes/).
+
+# Hanson model
+
 
