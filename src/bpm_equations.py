@@ -29,6 +29,7 @@ DEFAULT_AD_B = np.array([
     -12.322, -15.694, -19.402
 ])
 
+
 def sound_pressure_levels(ox, oy, oz, V, omega, B, r, c, c1, h, alpha, psi, nu, c0, 
                           laminar, turbulent, blunt, tip, trip, round, weighted, nbeta, f, AdB, smooth):
 
@@ -199,7 +200,7 @@ def laminar_pressure(p, f, r, theta, phi, L, c, alpha, V, c0, nu, smooth):
     for i in range(len(f)):
         stp = f[i] * dp/V
 
-        G1 = G1_func(stp/Stp_peak,)
+        G1 = G1_func(stp/Stp_peak, smooth)
 
         spl_lam = G1 + G2 + G3 + scale
 
@@ -208,7 +209,7 @@ def laminar_pressure(p, f, r, theta, phi, L, c, alpha, V, c0, nu, smooth):
     return p
 
 def turbulent_pressure(p, f, r, theta, phi, L, c, alpha, V, c0, nu, trip, smooth,
-                       pressure = True, suction = True, separation = True):
+                       pressure = True, suction = True, separation = False):
 
     '''
     I flag 'pressure', 'suction' e 'separation' permettono di isolare le singole sorgenti.
@@ -685,7 +686,7 @@ def G1_func(e, smooth):
             G1_f4 = -98.409 * np.log10(e) + 2.0
             G1 = quintic_blend(G1_f3, G1_f4, e, 1.17, G1_dx)
         elif e < 1.674 - G1_dx:
-            G1 = -98.409 * np.log10 + 2.0
+            G1 = -98.409 * np.log10(e) + 2.0
         elif e < 1.674 + G1_dx:
             G1_f4 = -98.409 * np.log10(e) + 2.0
             G1_f5 = -39.8 * np.log10(e) + 11.12   
@@ -1045,11 +1046,11 @@ def b0_func(Re, smooth):
 '''Calcola la funzione di direttività ad alta frequenza per la posizione dell'osservatore in input'''
 
 def Dhfunc(M, theta, phi):
-
+  
     #Numero di Mach assunto per convenzione
     Mc = 0.8 * M
 
-    #Funzione di direttività
+    # Funzione di direttività
     Dh = (2 * np.sin(theta/2.0) ** 2 * np.sin(phi) ** 2)/((1 + M * np.cos(theta)) * (1 + (M - Mc) * np.cos(theta)) ** 2)
 
     return Dh
@@ -1057,8 +1058,8 @@ def Dhfunc(M, theta, phi):
 '''Calcola la funzione di direttività a bassa frequenza per la posizione dell'osservatore in input'''
 
 def Dlfunc(M, theta, phi):
-    
-    #Funzione di direttività
+
+    # Funzione di direttività
     Dl = (np.sin(theta) ** 2 * np.sin(phi) ** 2)/(1 + M * np.cos(theta)) ** 4
 
     return Dl
